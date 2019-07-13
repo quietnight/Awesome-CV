@@ -88,7 +88,7 @@
   pdfsubject={},
   pdfkeywords={}
 }
-
+\RequirePackage{xeCJK}
 
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
@@ -164,23 +164,30 @@
 \newfontfamily\FA[Path=\@fontdir]{FontAwesome}
 % Set font for header (default is Roboto)
 \newfontfamily\headerfont[
-  Path=\@fontdir,
-  UprightFont=*-Regular,
-  ItalicFont=*-Italic,
-  BoldFont=*-Bold,
-  BoldItalicFont=*-BoldItalic,
+Path=\@fontdir,
+UprightFont=*-Regular,
+ItalicFont=*-Italic,
+BoldFont=*-Bold,
+BoldItalicFont=*-BoldItalic,
 ]{Roboto}
 
 \newfontfamily\headerfontlight[
-  Path=\@fontdir,
-  UprightFont=*-Thin,
-  ItalicFont=*-ThinItalic,
-  BoldFont=*-Medium,
-  BoldItalicFont=*-MediumItalic,
+Path=\@fontdir,
+UprightFont=*-Thin,
+ItalicFont=*-ThinItalic,
+BoldFont=*-Medium,
+BoldItalicFont=*-MediumItalic,
 ]{Roboto}
 
-\newcommand*{\footerfont}{\sourcesanspro}
-\newcommand*{\bodyfont}{\sourcesanspro}
+\newfontfamily\sourcehansanssc[
+Path=\@fontdir/SourceHanSansSC/,
+Extension=.otf,
+UprightFont=*-Regular,
+BoldFont=*-Bold
+]{SourceHanSansSC}
+  
+\newcommand*{\footerfont}{\sourcehansanssc}
+\newcommand*{\bodyfont}{\sourcehansanssc}
 \newcommand*{\bodyfontlight}{\sourcesansprolight}
 
 %-------------------------------------------------------------------------------
@@ -188,7 +195,7 @@
 %-------------------------------------------------------------------------------
 % Configure styles for each CV elements
 % For fundamental structures
-\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{graytext} #1}}
+\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
 \newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
 \newcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\scshape\color{awesome} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
